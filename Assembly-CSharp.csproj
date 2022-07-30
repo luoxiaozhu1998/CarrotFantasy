@@ -46,6 +46,7 @@
      <Compile Include="Assets\Scripts\Scenes\NormalGameOptionSceneState.cs" />
      <Compile Include="Assets\Scripts\Factory\RunTimeAnimatorControllerFactory.cs" />
      <Compile Include="Assets\Scripts\Test\singletonTest.cs" />
+     <Compile Include="Assets\Scripts\UI\UIFacade.cs" />
      <Compile Include="Assets\Scripts\Scenes\NormalModelSceneState.cs" />
      <Compile Include="Assets\Scripts\Factory\SpriteFactory.cs" />
      <Compile Include="Assets\Scripts\Factory\IBaseFactory.cs" />
@@ -71,7 +72,6 @@
      <Compile Include="Assets\Scripts\Manager\MonoManager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Test\DotweenTest.cs" />
      <Compile Include="Assets\Scripts\Factory\FactoryType.cs" />
-     <Compile Include="Assets\Scripts\UI\UIFacade.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
