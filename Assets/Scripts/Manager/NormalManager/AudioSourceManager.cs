@@ -10,8 +10,8 @@ namespace Manager.NormalManager
     {
         private AudioSource[] _audioSources;
 
-        private bool playEffectMusic = true;
-        private bool playBGMusic = true;
+        private bool _playEffectMusic = true;
+        private bool _playBgMusic = true;
 
         /// <summary>
         /// 构造函数
@@ -23,16 +23,14 @@ namespace Manager.NormalManager
 
         public void PlayBgMusic(AudioClip audioClip)
         {
-            if (!_audioSources[0].isPlaying || _audioSources[0].clip != audioClip)
-            {
-                _audioSources[0].clip = audioClip;
-                _audioSources[0].Play();
-            }
+            if (_audioSources[0].isPlaying && _audioSources[0].clip == audioClip) return;
+            _audioSources[0].clip = audioClip;
+            _audioSources[0].Play();
         }
 
         public void PlayEffectMusic(AudioClip audioClip)
         {
-            if (playEffectMusic)
+            if (_playEffectMusic)
             {
                 _audioSources[1].PlayOneShot(audioClip);
             }
@@ -47,5 +45,24 @@ namespace Manager.NormalManager
         {
             _audioSources[0].Play();
         }
+
+        public void CloseOrOpenBgMusic()
+        {
+            _playBgMusic = !_playBgMusic;
+            if (_playBgMusic)
+            {
+                OpenBgMusic();
+            }
+            else
+            {
+                CloseBgMusic();
+            }
+        }
+        public void CloseOrEffectMusic()
+        {
+            _playEffectMusic = !_playEffectMusic;
+            
+        }
+        
     }
 }

@@ -8,19 +8,22 @@ namespace Manager.NormalManager
     /// </summary>
     public class FactoryManager
     {
-        public Dictionary<FactoryType, IBaseFactory> FactorieDict = new();
+        public readonly Dictionary<FactoryType, IBaseFactory> FactoryDict;
 
-        public AudioClipFactory AudioClipFactory;
+        public readonly AudioClipFactory AudioClipFactory;
 
-        public SpriteFactory SpriteFactory;
+        public readonly SpriteFactory SpriteFactory;
 
-        public RunTimeAnimatorControllerFactory RunTimeAnimatorControllerFactory;
+        public readonly RunTimeAnimatorControllerFactory RunTimeAnimatorControllerFactory;
 
         public FactoryManager()
         {
-            FactorieDict.Add(FactoryType.UIPanelFactory, new UIPanelFactory());
-            FactorieDict.Add(FactoryType.UIFactory, new UIFactory());
-            FactorieDict.Add(FactoryType.GameFactory, new GameFactory());
+            FactoryDict = new Dictionary<FactoryType, IBaseFactory>
+            {
+                {FactoryType.UIPanelFactory, new UIPanelFactory()},
+                {FactoryType.UIFactory, new UIFactory()},
+                {FactoryType.GameFactory, new GameFactory()}
+            };
             AudioClipFactory = new AudioClipFactory();
             SpriteFactory = new SpriteFactory();
             RunTimeAnimatorControllerFactory = new RunTimeAnimatorControllerFactory();

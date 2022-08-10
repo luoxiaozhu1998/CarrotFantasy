@@ -196,7 +196,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8288930553798702534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 201945918}
+        m_TargetAssemblyTypeName: UI.UIPanel.MainPanel, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8288930553898982326
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +329,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8288930553898982325}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 201945918}
+        m_TargetAssemblyTypeName: UI.UIPanel.MainPanel, Assembly-CSharp
+        m_MethodName: ToBossModelScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8288930553939055983
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +538,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8288930553957044244}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 201945918}
+        m_TargetAssemblyTypeName: UI.UIPanel.MainPanel, Assembly-CSharp
+        m_MethodName: MoveToLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8288930554143643936
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +747,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8288930554179531623}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 201945918}
+        m_TargetAssemblyTypeName: UI.UIPanel.MainPanel, Assembly-CSharp
+        m_MethodName: ToMonsterNestScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8288930554211986354
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +1017,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8288930554908944747}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 201945918}
+        m_TargetAssemblyTypeName: UI.UIPanel.MainPanel, Assembly-CSharp
+        m_MethodName: MoveToRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8288930555054345215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1226,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8288930555167866672}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 201945918}
+        m_TargetAssemblyTypeName: UI.UIPanel.MainPanel, Assembly-CSharp
+        m_MethodName: ToNormalModelScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8288930555430247903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1250,7 @@ GameObject:
   - component: {fileID: 8288930555430247900}
   - component: {fileID: 8288930555430247890}
   - component: {fileID: 8288930555430247901}
+  - component: {fileID: 201945918}
   m_Layer: 5
   m_Name: MainPanel
   m_TagString: Untagged
@@ -1210,10 +1283,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8288930555430247890
 CanvasRenderer:
@@ -1253,6 +1326,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &201945918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288930555430247903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfc28973e894e5cb08f7491c7c229c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8288930555431599068
 GameObject:
   m_ObjectHideFlags: 0

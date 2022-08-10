@@ -1,15 +1,24 @@
-﻿namespace Scenes
+﻿using UI;
+
+namespace Scenes
 {
     public class BaseSceneState : IBaseSceneState
     {
-        public void EnterScene()
+        protected readonly UIFacade UIFacade;
+
+        public BaseSceneState(UIFacade uiFacade)
         {
-            throw new System.NotImplementedException();
+            UIFacade = uiFacade;
         }
 
-        public void ExitScene()
+        public virtual void EnterScene()
         {
-            throw new System.NotImplementedException();
+            UIFacade.InitDict();
+        }
+
+        public virtual void ExitScene()
+        {
+            UIFacade.ClearDict();
         }
     }
 }
