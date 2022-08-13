@@ -18,7 +18,7 @@ namespace Manager.NormalManager
         /// </summary>
         public AudioSourceManager()
         {
-            _audioSources = GameManager.Instance.GetComponents<AudioSource>();
+            _audioSources = GameManager.instance.GetComponents<AudioSource>();
         }
 
         public void PlayBgMusic(AudioClip audioClip)

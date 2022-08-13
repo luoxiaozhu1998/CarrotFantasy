@@ -26,7 +26,7 @@ namespace UI.UIPanel
 
         protected virtual void Awake()
         {
-            MuiFacade = GameManager.Instance.UIManager.UIFacade;
+            MuiFacade = GameManager.instance.UIManager.UIFacade;
         }
     }
 }

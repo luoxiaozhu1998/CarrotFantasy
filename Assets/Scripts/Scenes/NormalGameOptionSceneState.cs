@@ -1,4 +1,5 @@
-﻿using UI;
+﻿using Manager.NormalManager;
+using UI;
 using UnityEngine;
 
 namespace Scenes
@@ -7,6 +8,21 @@ namespace Scenes
     {
         public NormalGameOptionSceneState(UIFacade uiFacade) : base(uiFacade)
         {
+        }
+
+        public override void EnterScene()
+        {
+            UIFacade.AddPanelToDict(Constants.PanelName.GameNormalOptionPanelName);
+            UIFacade.AddPanelToDict(Constants.PanelName.GameNormalBigLevelPageName);
+            UIFacade.AddPanelToDict(Constants.PanelName.GameNormalLevelPanelName);
+            UIFacade.AddPanelToDict(Constants.PanelName.HelpPanelName);
+            UIFacade.AddPanelToDict(Constants.PanelName.GameLoadPanelName);
+            base.EnterScene();
+        }
+
+        public override void ExitScene()
+        {
+            base.ExitScene();
         }
     }
 }

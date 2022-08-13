@@ -15,16 +15,16 @@ namespace Manager.NormalManager
         /// <summary>
         /// 中介者模式
         /// </summary>
-        public UIFacade UIFacade;
+        public readonly UIFacade UIFacade;
 
         //当前场景的PanelDict
         public Dictionary<string, GameObject> CurrentScenePanelDict;
 
-        private readonly GameManager _manager;
+        private readonly GameManager m_Manager;
 
         public UIManager()
         {
-            _manager = GameManager.Instance;
+            m_Manager = GameManager.instance;
             CurrentScenePanelDict = new Dictionary<string, GameObject>();
             UIFacade = new UIFacade(this);
             UIFacade.CurrentSceneState = new StartLoadSceneState(UIFacade);
@@ -32,7 +32,7 @@ namespace Manager.NormalManager
 
         private void PushUIPanel(string uiPanelName, GameObject uiPanelGo)
         {
-            _manager.PushGameObjectToFactory(FactoryType.UIPanelFactory, uiPanelName, uiPanelGo);
+            m_Manager.PushGameObjectToFactory(FactoryType.UIPanelFactory, uiPanelName, uiPanelGo);
         }
 
         /// <summary>

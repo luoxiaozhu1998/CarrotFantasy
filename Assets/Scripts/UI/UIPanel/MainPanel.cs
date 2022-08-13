@@ -32,6 +32,7 @@ namespace UI.UIPanel
 
         public override void EnterPanel()
         {
+            transform.SetSiblingIndex(8);
             m_CarrotAnimator.Play("CarrotGrow");
             m_ExitTween?.PlayBackwards();
             m_CloudTrans.gameObject.SetActive(true);

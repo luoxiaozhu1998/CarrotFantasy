@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using Game;
+
 namespace Manager.NormalManager
 {
     /// <summary>
@@ -12,6 +15,9 @@ namespace Manager.NormalManager
         public int KillMonsterNum;
         public int KillBossNum;
         public int ClearItemNum;
+        public List<bool> UnlockedNormalModelBigLevelLIst;
+        public List<Stage> UnlockedNormalModelLevelLIst;
+        public List<int> UnlockedNormalModelLevelNum;
 
         public int Cookies;
         public int Milk;

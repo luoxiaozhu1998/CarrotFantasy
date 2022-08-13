@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using UI.UI;
 using UnityEngine;
 
 namespace UI.UIPanel
@@ -8,8 +9,8 @@ namespace UI.UIPanel
         private GameObject m_HelpPageGo;
         private GameObject m_MonsterPageGo;
         private GameObject m_TowerPageGo;
-        private SlideScrollView m_SlideScrollView;
-        private SlideCanCoverScrollView m_SlideCanCoverScrollView;
+        private SlideScrollView m_HelpPageSlideScrollView;
+        private SlideScrollView m_TowerPageSlideScrollView;
         private Tween m_HelpPanelTween;
 
         protected override void Awake()
@@ -18,9 +19,9 @@ namespace UI.UIPanel
             m_HelpPageGo = transform.Find("HelpPage").gameObject;
             m_MonsterPageGo = transform.Find("MonsterPage").gameObject;
             m_TowerPageGo = transform.Find("TowerPage").gameObject;
-            m_SlideCanCoverScrollView = m_HelpPageGo.transform.Find("Scroll View")
-                .GetComponent<SlideCanCoverScrollView>();
-            m_SlideScrollView = m_TowerPageGo.transform.Find("Scroll View")
+            m_TowerPageSlideScrollView = m_HelpPageGo.transform.Find("Scroll View")
+                .GetComponent<SlideScrollView>();
+            m_HelpPageSlideScrollView = m_TowerPageGo.transform.Find("Scroll View")
                 .GetComponent<SlideScrollView>();
             m_HelpPanelTween = transform.DOLocalMoveX(0, 0.5f);
             m_HelpPanelTween.SetAutoKill(false);
@@ -53,7 +54,28 @@ namespace UI.UIPanel
             base.InitPanel();
             transform.localPosition = new Vector3(1920, 0, 0);
             transform.SetSiblingIndex(5);
-            m_SlideScrollView.Init();
+            //初始化两个ScrollView
+            m_HelpPageSlideScrollView.Init();
+            m_TowerPageSlideScrollView.Init();
+            //初始显示help面板
+            ShowHelpPage();
+        }
+
+        public override void EnterPanel()
+        {
+            base.EnterPanel();
+            gameObject.SetActive(true);
+            m_HelpPageSlideScrollView.Init();
+            m_TowerPageSlideScrollView.Init();
+            m_HelpPanelTween.PlayForward();
+        }
+
+        public override void ExitPanel()
+        {
+            base.ExitPanel();
+            m_HelpPanelTween.PlayBackwards();
+            //返回主面板
+            MuiFacade.CurrentScenePanelDict[Constants.PanelName.MainPanelName].EnterPanel();
         }
     }
 }

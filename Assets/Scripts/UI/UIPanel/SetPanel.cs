@@ -103,7 +103,7 @@ namespace UI.UIPanel
         /// </summary>
         private void ShowStatistics()
         {
-            var playerManager = MuiFacade.MPlayerManager;
+            var playerManager = MuiFacade.PlayerManager;
             statisticsTexts[0].text = playerManager.AdventureModelNum.ToString();
             statisticsTexts[1].text = playerManager.BuriedLevelNum.ToString();
             statisticsTexts[2].text = playerManager.BossModelNum.ToString();

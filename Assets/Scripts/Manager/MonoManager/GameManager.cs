@@ -18,14 +18,12 @@ namespace Manager.MonoManager
 
         public UIManager UIManager;
 
-        private static GameManager _instance;
-
-        public static GameManager Instance => _instance;
+        public static GameManager instance { get; private set; }
 
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
-            _instance = this;
+            instance = this;
             PlayerManager = new PlayerManager();
             FactoryManager = new FactoryManager();
             AudioSourceManager = new AudioSourceManager();
