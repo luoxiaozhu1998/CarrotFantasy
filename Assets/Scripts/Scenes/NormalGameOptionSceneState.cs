@@ -1,6 +1,7 @@
 ﻿using Manager.NormalManager;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Scenes
 {
@@ -23,6 +24,8 @@ namespace Scenes
         public override void ExitScene()
         {
             base.ExitScene();
+            SceneManager.LoadSceneAsync(
+                UIFacade.CurrentSceneState.GetType() == typeof(NormalModelSceneState) ? 4 : 1);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using Manager.MonoManager;
+﻿using Manager.MonoManager;
 using UnityEngine;
 
 namespace UI.UIPanel

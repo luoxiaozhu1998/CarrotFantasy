@@ -27,7 +27,7 @@ namespace Scenes
             {
                 SceneManager.LoadScene(2);
             }
-            if (UIFacade.CurrentSceneState.GetType() == typeof(BossGameOptionSceneState))
+            else if (UIFacade.CurrentSceneState.GetType() == typeof(BossGameOptionSceneState))
             {
                 SceneManager.LoadScene(3);
             }

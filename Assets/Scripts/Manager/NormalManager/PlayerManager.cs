@@ -23,5 +23,39 @@ namespace Manager.NormalManager
         public int Milk;
         public int Nest;
         public int Diamonds;
+
+        public PlayerManager()
+        {
+            AdventureModelNum = 100;
+            BuriedLevelNum = 100;
+            BossModelNum = 100;
+            Coin = 100;
+            KillMonsterNum = 100;
+            KillBossNum = 100;
+            ClearItemNum = 100;
+            UnlockedNormalModelBigLevelLIst = new List<bool>
+            {
+                true,
+                true,
+                true
+            };
+            UnlockedNormalModelLevelLIst = new List<Stage>
+            {
+                new(10,2,false,true,1,1,0,false,new[]{1,2}),
+                new(10,2,false,true,1,2,0,false,new[]{2,2}),
+                new(10,2,false,true,1,3,0,false,new[]{3,2}),
+                new(10,2,false,true,1,4,0,false,new[]{4,2}),
+                new(10,2,false,true,1,5,0,false,new[]{5,2}),
+                new(10,2,false,true,2,1,0,false,new[]{1,2}),
+                new(10,2,false,true,2,2,0,false,new[]{2,2}),
+                new(10,2,false,true,2,3,0,false,new[]{3,2}),
+                new(10,2,false,true,2,4,0,false,new[]{4,2}),
+                new(10,2,false,true,2,5,0,false,new[]{5,2}),
+            };
+            UnlockedNormalModelLevelNum = new List<int>()
+            {
+                2, 2, 2
+            };
+        }
     }
 }

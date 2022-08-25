@@ -1,5 +1,6 @@
 using System;
 using Factory;
+using Game;
 using Manager.NormalManager;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ namespace Manager.MonoManager
 
         public static GameManager instance { get; private set; }
 
+        public Stage CurrentStage;
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
@@ -31,7 +33,7 @@ namespace Manager.MonoManager
             UIManager.UIFacade.CurrentSceneState.EnterScene();
         }
 
-        public GameObject CreateItem(GameObject itemGo)
+        public static GameObject CreateItem(GameObject itemGo)
         {
             var go = Instantiate(itemGo);
             return go;

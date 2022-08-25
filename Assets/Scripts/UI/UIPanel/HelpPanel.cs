@@ -52,13 +52,19 @@ namespace UI.UIPanel
         public override void InitPanel()
         {
             base.InitPanel();
-            transform.localPosition = new Vector3(1920, 0, 0);
             transform.SetSiblingIndex(5);
             //初始化两个ScrollView
             m_HelpPageSlideScrollView.Init();
             m_TowerPageSlideScrollView.Init();
             //初始显示help面板
             ShowHelpPage();
+            if (transform.localPosition == Vector3.zero)
+            {
+                gameObject.SetActive(false);
+                m_HelpPanelTween.PlayBackwards();
+            }
+
+            transform.localPosition = new Vector3(1920, 0, 0);
         }
 
         public override void EnterPanel()
@@ -74,8 +80,28 @@ namespace UI.UIPanel
         {
             base.ExitPanel();
             m_HelpPanelTween.PlayBackwards();
-            //返回主面板
-            MuiFacade.CurrentScenePanelDict[Constants.PanelName.MainPanelName].EnterPanel();
+            if (MuiFacade.CurrentScenePanelDict.ContainsKey(Constants.PanelName
+                    .GameNormalOptionPanelName))
+            {
+                var gameNormalOptionPanel =
+                    MuiFacade.CurrentScenePanelDict[Constants.PanelName.GameNormalOptionPanelName]
+                        as GameNormalOptionPanel;
+                if (gameNormalOptionPanel != null && gameNormalOptionPanel.isInBigLevelPanel)
+                {
+                    MuiFacade.CurrentScenePanelDict[Constants.PanelName.GameNormalBigLevelPageName]
+                        .EnterPanel();
+                }
+                else if (gameNormalOptionPanel != null && !gameNormalOptionPanel.isInBigLevelPanel)
+                {
+                    MuiFacade.CurrentScenePanelDict[Constants.PanelName.GameNormalLevelPanelName]
+                        .EnterPanel();
+                }
+            }
+            else
+            {
+                //返回主面板
+                MuiFacade.CurrentScenePanelDict[Constants.PanelName.MainPanelName].EnterPanel();
+            }
         }
     }
 }

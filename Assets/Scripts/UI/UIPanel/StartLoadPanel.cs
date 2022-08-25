@@ -1,5 +1,4 @@
 ﻿using Scenes;
-using UnityEngine;
 
 namespace UI.UIPanel
 {

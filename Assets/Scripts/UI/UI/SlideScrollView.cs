@@ -8,22 +8,22 @@ namespace UI.UI
 {
     public class SlideScrollView : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     {
-        private RectTransform contentTrans;
-        private float beginMousePositionX;
-        private float endMousePositionX;
-        private ScrollRect scrollRect;
+        private RectTransform m_ContentTrans;
+        private float m_BeginMousePositionX;
+        private float m_EndMousePositionX;
+        private ScrollRect m_ScrollRect;
 
         public int cellLength;
         public int spacing;
         public int leftOffset;
-        private float moveOneItemLength;
+        private float m_MoveOneItemLength;
 
-        private Vector3 currentContentLocalPos; //上一次的位置
-        private Vector3 contentInitPos; //Content初始位置
-        private Vector2 contentTransSize; //Content初始大小
+        private Vector3 m_CurrentContentLocalPos; //上一次的位置
+        private Vector3 m_ContentInitPos; //Content初始位置
+        private Vector2 m_ContentTransSize; //Content初始大小
 
         public int totalItemNum;
-        private int currentIndex;
+        private int m_CurrentIndex;
 
         public TMP_Text pageText;
 
@@ -31,29 +31,29 @@ namespace UI.UI
 
         private void Awake()
         {
-            scrollRect = GetComponent<ScrollRect>();
-            contentTrans = scrollRect.content;
-            moveOneItemLength = cellLength + spacing;
-            var localPosition = contentTrans.localPosition;
-            currentContentLocalPos = localPosition;
-            contentTransSize = contentTrans.sizeDelta;
-            contentInitPos = localPosition;
-            currentIndex = 1;
+            m_ScrollRect = GetComponent<ScrollRect>();
+            m_ContentTrans = m_ScrollRect.content;
+            m_MoveOneItemLength = cellLength + spacing;
+            var localPosition = m_ContentTrans.localPosition;
+            m_CurrentContentLocalPos = localPosition;
+            m_ContentTransSize = m_ContentTrans.sizeDelta;
+            m_ContentInitPos = localPosition;
+            m_CurrentIndex = 1;
             if (pageText != null)
             {
-                pageText.text = currentIndex + "/" + totalItemNum;
+                pageText.text = m_CurrentIndex + "/" + totalItemNum;
             }
         }
 
         public void Init()
         {
-            currentIndex = 1;
-            if (contentTrans == null) return;
-            contentTrans.localPosition = contentInitPos;//重新加载时返回第一页
-            currentContentLocalPos = contentInitPos;
+            m_CurrentIndex = 1;
+            if (m_ContentTrans == null) return;
+            m_ContentTrans.localPosition = m_ContentInitPos;//重新加载时返回第一页
+            m_CurrentContentLocalPos = m_ContentInitPos;
             if (pageText != null)
             {
-                pageText.text = currentIndex + "/" + totalItemNum;
+                pageText.text = m_CurrentIndex + "/" + totalItemNum;
             }
         }
 
@@ -63,14 +63,13 @@ namespace UI.UI
         /// <param name="eventData"></param>
         public void OnEndDrag(PointerEventData eventData)
         {
-            endMousePositionX = Input.mousePosition.x;
-            float offSetX;
+            m_EndMousePositionX = Input.mousePosition.x;
             float moveDistance; //当次需要滑动的距离
-            offSetX = beginMousePositionX - endMousePositionX;
+            var offSetX = m_BeginMousePositionX - m_EndMousePositionX;
 
             if (offSetX > 0) //右滑
             {
-                if (currentIndex >= totalItemNum)
+                if (m_CurrentIndex >= totalItemNum)
                 {
                     return;
                 }
@@ -80,12 +79,12 @@ namespace UI.UI
                     UpdatePanel(true);
                 }
 
-                moveDistance = -moveOneItemLength;
-                currentIndex++;
+                moveDistance = -m_MoveOneItemLength;
+                m_CurrentIndex++;
             }
             else //左滑
             {
-                if (currentIndex <= 1)
+                if (m_CurrentIndex <= 1)
                 {
                     return;
                 }
@@ -95,19 +94,19 @@ namespace UI.UI
                     UpdatePanel(false);
                 }
 
-                moveDistance = moveOneItemLength;
-                currentIndex--;
+                moveDistance = m_MoveOneItemLength;
+                m_CurrentIndex--;
             }
 
             if (pageText != null)
             {
-                pageText.text = currentIndex + "/" + totalItemNum;
+                pageText.text = m_CurrentIndex + "/" + totalItemNum;
             }
 
-            DOTween.To(() => contentTrans.localPosition,
-                lerpValue => contentTrans.localPosition = lerpValue,
-                currentContentLocalPos + new Vector3(moveDistance, 0, 0), 0.5f).SetEase(Ease.OutQuint);
-            currentContentLocalPos += new Vector3(moveDistance, 0, 0);
+            DOTween.To(() => m_ContentTrans.localPosition,
+                lerpValue => m_ContentTrans.localPosition = lerpValue,
+                m_CurrentContentLocalPos + new Vector3(moveDistance, 0, 0), 0.5f).SetEase(Ease.OutQuint);
+            m_CurrentContentLocalPos += new Vector3(moveDistance, 0, 0);
         }
 
         /// <summary>
@@ -115,17 +114,16 @@ namespace UI.UI
         /// </summary>
         public void ToNextPage()
         {
-            float moveDistance;
-            if (currentIndex >= totalItemNum)
+            if (m_CurrentIndex >= totalItemNum)
             {
                 return;
             }
 
-            moveDistance = -moveOneItemLength;
-            currentIndex++;
+            var moveDistance = -m_MoveOneItemLength;
+            m_CurrentIndex++;
             if (pageText != null)
             {
-                pageText.text = currentIndex + "/" + totalItemNum;
+                pageText.text = m_CurrentIndex + "/" + totalItemNum;
             }
 
             if (needSendMessage)
@@ -133,25 +131,25 @@ namespace UI.UI
                 UpdatePanel(true);
             }
 
-            DOTween.To(() => contentTrans.localPosition,
-                lerpValue => contentTrans.localPosition = lerpValue,
-                currentContentLocalPos + new Vector3(moveDistance, 0, 0), 0.5f).SetEase(Ease.OutQuint);
-            currentContentLocalPos += new Vector3(moveDistance, 0, 0);
+            DOTween.To(() => m_ContentTrans.localPosition,
+                lerpValue => m_ContentTrans.localPosition = lerpValue,
+                m_CurrentContentLocalPos + new Vector3(moveDistance, 0, 0), 0.5f)
+                .SetEase(Ease.OutQuint);
+            m_CurrentContentLocalPos += new Vector3(moveDistance, 0, 0);
         }
 
         public void ToLastPage()
         {
-            float moveDistance;
-            if (currentIndex <= 1)
+            if (m_CurrentIndex <= 1)
             {
                 return;
             }
 
-            moveDistance = moveOneItemLength;
-            currentIndex--;
+            var moveDistance = m_MoveOneItemLength;
+            m_CurrentIndex--;
             if (pageText != null)
             {
-                pageText.text = currentIndex.ToString() + "/" + totalItemNum;
+                pageText.text = m_CurrentIndex.ToString() + "/" + totalItemNum;
             }
 
             if (needSendMessage)
@@ -159,43 +157,38 @@ namespace UI.UI
                 UpdatePanel(false);
             }
 
-            DOTween.To(() => contentTrans.localPosition,
-                lerpValue => contentTrans.localPosition = lerpValue,
-                currentContentLocalPos + new Vector3(moveDistance, 0, 0), 0.5f).SetEase(Ease.OutQuint);
-            currentContentLocalPos += new Vector3(moveDistance, 0, 0);
+            DOTween.To(() => m_ContentTrans.localPosition,
+                lerpValue => m_ContentTrans.localPosition = lerpValue,
+                m_CurrentContentLocalPos + new Vector3(moveDistance, 0, 0), 0.5f).SetEase(Ease.OutQuint);
+            m_CurrentContentLocalPos += new Vector3(moveDistance, 0, 0);
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            beginMousePositionX = Input.mousePosition.x;
+            m_BeginMousePositionX = Input.mousePosition.x;
         }
 
         //设置Content的大小
         public void SetContentLength(int itemNum)
         {
-            contentTrans.sizeDelta =
-                new Vector2(contentTrans.sizeDelta.x + (cellLength + spacing) * (itemNum - 1),
-                    contentTrans.sizeDelta.y);
+            var sizeDelta = m_ContentTrans.sizeDelta;
+            sizeDelta =
+                new Vector2(sizeDelta.x + (cellLength + spacing) * (itemNum - 1),
+                    sizeDelta.y);
+            m_ContentTrans.sizeDelta = sizeDelta;
             totalItemNum = itemNum;
         }
 
         //初始化Content的大小
         public void InitScrollLength()
         {
-            contentTrans.sizeDelta = contentTransSize;
+            m_ContentTrans.sizeDelta = m_ContentTransSize;
         }
 
         //发送翻页信息的方法
-        public void UpdatePanel(bool toNext)
+        private void UpdatePanel(bool toNext)
         {
-            if (toNext)
-            {
-                gameObject.SendMessageUpwards("ToNextLevel");
-            }
-            else
-            {
-                gameObject.SendMessageUpwards("ToLastLevel");
-            }
+            gameObject.SendMessageUpwards(toNext ? "ToNextLevel" : "ToLastLevel");
         }
     }
 }

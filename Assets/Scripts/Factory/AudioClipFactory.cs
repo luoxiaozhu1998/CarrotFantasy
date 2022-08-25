@@ -8,27 +8,27 @@ namespace Factory
         /// <summary>
         /// string：路径，AudioClip：音频
         /// </summary>
-        protected readonly Dictionary<string, AudioClip> FactoryDict = new();
+        private readonly Dictionary<string, AudioClip> m_FactoryDict = new();
 
-        private readonly string _loadPath;
+        private readonly string m_LoadPath;
 
         public AudioClipFactory()
         {
-            _loadPath = "AudioClips/";
+            m_LoadPath = "AudioClips/";
         }
 
         public AudioClip GetSingleResource(string resourcePath)
         {
             AudioClip itemGo;
-            var itemPath = _loadPath + resourcePath;
-            if (FactoryDict.ContainsKey(resourcePath))
+            var itemPath = m_LoadPath + resourcePath;
+            if (m_FactoryDict.ContainsKey(resourcePath))
             {
-                itemGo = FactoryDict[resourcePath];
+                itemGo = m_FactoryDict[resourcePath];
             }
             else
             {
                 itemGo = Resources.Load<AudioClip>(itemPath);
-                FactoryDict.Add(resourcePath, itemGo);
+                m_FactoryDict.Add(resourcePath, itemGo);
             }
 
             if (itemGo != null)

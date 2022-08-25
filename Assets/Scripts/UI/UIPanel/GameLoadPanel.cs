@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace UI.UIPanel
+﻿namespace UI.UIPanel
 {
     public class GameLoadPanel : BasePanel
     {

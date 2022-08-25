@@ -34,9 +34,9 @@ namespace UI
 
         private GameObject m_Mask;
         private Image m_MaskImage;
-        public Transform CanvasTransform;
+        private Transform m_CanvasTransform;
         public IBaseSceneState CurrentSceneState;
-        public IBaseSceneState LastSceneState;
+        private IBaseSceneState m_LastSceneState;
 
         #endregion
 
@@ -52,9 +52,9 @@ namespace UI
         /// <summary>
         /// 初始化遮罩
         /// </summary>
-        public void InitMask()
+        private void InitMask()
         {
-            CanvasTransform = GameObject.Find("Canvas").transform;
+            m_CanvasTransform = GameObject.Find("Canvas").transform;
             m_Mask = CreateUIAndSetPosition("ImageMask");
             m_MaskImage = m_Mask.GetComponent<Image>();
         }
@@ -67,7 +67,7 @@ namespace UI
             foreach (var item in m_UIManager.CurrentScenePanelDict)
             {
                 
-                item.Value.transform.SetParent(CanvasTransform);
+                item.Value.transform.SetParent(m_CanvasTransform);
                 item.Value.transform.localPosition = Vector3.zero;
                 item.Value.transform.localScale = Vector3.one;
                 var basePanel = item.Value.GetComponent<IBasePanel>();
@@ -82,12 +82,12 @@ namespace UI
         /// <param name="baseSceneState"></param>
         public void ChangeSceneState(IBaseSceneState baseSceneState)
         {
-            LastSceneState = CurrentSceneState;
+            m_LastSceneState = CurrentSceneState;
             ShowMask();
             CurrentSceneState = baseSceneState;
         }
 
-        public void ShowMask()
+        private void ShowMask()
         {
             m_Mask.transform.SetSiblingIndex(10);
             //透明度从0到1
@@ -100,7 +100,7 @@ namespace UI
 
         private void ExitSceneComplete()
         {
-            LastSceneState.ExitScene();
+            m_LastSceneState.ExitScene();
             CurrentSceneState.EnterScene();
             HideMask();
         }
@@ -108,7 +108,7 @@ namespace UI
         /// <summary>
         /// 隐藏遮罩
         /// </summary>
-        public void HideMask()
+        private void HideMask()
         {
             m_Mask.transform.SetSiblingIndex(10);
             DOTween.To(() => m_MaskImage.color, toColor => m_MaskImage.color = toColor,
@@ -135,10 +135,10 @@ namespace UI
         /// </summary>
         /// <param name="uiName"></param>
         /// <returns>该ui对象</returns>
-        public GameObject CreateUIAndSetPosition(string uiName)
+        private GameObject CreateUIAndSetPosition(string uiName)
         {
             var itemGo = GetGameObjectResource(FactoryType.UIFactory, uiName);
-            itemGo.transform.SetParent(CanvasTransform);
+            itemGo.transform.SetParent(m_CanvasTransform);
             itemGo.transform.localPosition = Vector3.zero;
             itemGo.transform.localScale = Vector3.one;
             return itemGo;

@@ -18,7 +18,7 @@ namespace Manager.NormalManager
         public readonly UIFacade UIFacade;
 
         //当前场景的PanelDict
-        public Dictionary<string, GameObject> CurrentScenePanelDict;
+        public readonly Dictionary<string, GameObject> CurrentScenePanelDict;
 
         private readonly GameManager m_Manager;
 

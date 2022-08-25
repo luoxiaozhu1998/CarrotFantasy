@@ -6,7 +6,7 @@ namespace Scenes
     {
         protected readonly UIFacade UIFacade;
 
-        public BaseSceneState(UIFacade uiFacade)
+        protected BaseSceneState(UIFacade uiFacade)
         {
             UIFacade = uiFacade;
         }
