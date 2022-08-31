@@ -1,0 +1,654 @@
+{
+  "BigLevelID": 1,
+  "LevelID": 1,
+  "GridStates": [
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": true,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": true,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": true,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": true,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": true,
+        "ItemID": 0
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": true,
+        "ItemID": 0
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": true,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": true,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": true,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": false,
+        "IsMonsterPoint": true,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ],
+    [
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      },
+      {
+        "CanBuild": true,
+        "IsMonsterPoint": false,
+        "HasItem": false,
+        "ItemID": -1
+      }
+    ]
+  ],
+  "MonsterPaths": [
+    {
+      "XIndex": 1,
+      "YIndex": 5
+    },
+    {
+      "XIndex": 1,
+      "YIndex": 2
+    },
+    {
+      "XIndex": 10,
+      "YIndex": 2
+    },
+    {
+      "XIndex": 10,
+      "YIndex": 5
+    },
+    {
+      "XIndex": 7,
+      "YIndex": 2
+    },
+    {
+      "XIndex": 7,
+      "YIndex": 3
+    },
+    {
+      "XIndex": 4,
+      "YIndex": 3
+    },
+    {
+      "XIndex": 4,
+      "YIndex": 2
+    }
+  ],
+  "RoundInfos": [
+    {
+      "monsterIDList": [
+        1,
+        1
+      ]
+    },
+    {
+      "monsterIDList": [
+        2,
+        2
+      ]
+    }
+  ]
+}
