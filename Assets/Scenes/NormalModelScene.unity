@@ -280,7 +280,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c7d6624b3998d3d49a67bc1cda91edab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b1b3d55969940f43abca95ce5b03b45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -596,4 +596,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawLine: 1
+  bigLevelID: 1
+  levelID: 0
+  gridWidth: 1.1111112
+  gridHeight: 1.25
+  monsterPaths: []
+  monsterPathPos: []
+  roundInfos: []
   gridGo: {fileID: 1054669247999731537, guid: 4c6f0131624d6444eb6e3f18f270caf4, type: 3}

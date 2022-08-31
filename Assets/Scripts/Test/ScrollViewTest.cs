@@ -9,7 +9,7 @@ public class ScrollViewTest : MonoBehaviour
 
     private RectTransform _contentRectTransform;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _scrollRect = GetComponent<ScrollRect>();
         _contentRectTransform = _scrollRect.content;
