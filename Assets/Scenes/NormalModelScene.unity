@@ -469,73 +469,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1877241442
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1877241445}
-  - component: {fileID: 1877241444}
-  - component: {fileID: 1877241443}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1877241443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877241442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1877241444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877241442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &1877241445
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877241442}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008670001
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +499,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d18130fa8c6c94395192ad1488c8e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterIDList: 
+  monsterIDIndex: 0
+  mapMaker: {fileID: 0}
+  normalModelPanel: {fileID: 0}
 --- !u!4 &2008670003
 Transform:
   m_ObjectHideFlags: 0
@@ -595,12 +532,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13889614fd9b44ae9d7ba11e5ec6772f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawLine: 1
-  bigLevelID: 1
-  levelID: 0
+  bigLevelID: 3
+  levelID: 3
+  carrot: {fileID: 0}
   gridWidth: 1.1111112
   gridHeight: 1.25
   monsterPaths: []
   monsterPathPos: []
   roundInfos: []
-  gridGo: {fileID: 1054669247999731537, guid: 4c6f0131624d6444eb6e3f18f270caf4, type: 3}

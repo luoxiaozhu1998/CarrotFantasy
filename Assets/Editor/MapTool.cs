@@ -5,6 +5,7 @@ using Game;
 using UnityEditor;
 using UnityEngine;
 
+#if Tool
 namespace Editor
 {
     /// <summary>
@@ -97,3 +98,4 @@ namespace Editor
         }
     }
 }
+#endif

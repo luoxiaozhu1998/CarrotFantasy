@@ -8,48 +8,48 @@ namespace Manager.NormalManager
     /// </summary>
     public class AudioSourceManager
     {
-        private AudioSource[] _audioSources;
+        private readonly AudioSource[] m_AudioSources;
 
-        private bool _playEffectMusic = true;
-        private bool _playBgMusic = true;
+        private bool m_PlayEffectMusic = true;
+        private bool m_PlayBgMusic = true;
 
         /// <summary>
         /// 构造函数
         /// </summary>
         public AudioSourceManager()
         {
-            _audioSources = GameManager.instance.GetComponents<AudioSource>();
+            m_AudioSources = GameManager.instance.GetComponents<AudioSource>();
         }
 
         public void PlayBgMusic(AudioClip audioClip)
         {
-            if (_audioSources[0].isPlaying && _audioSources[0].clip == audioClip) return;
-            _audioSources[0].clip = audioClip;
-            _audioSources[0].Play();
+            if (m_AudioSources[0].isPlaying && m_AudioSources[0].clip == audioClip) return;
+            m_AudioSources[0].clip = audioClip;
+            m_AudioSources[0].Play();
         }
 
         public void PlayEffectMusic(AudioClip audioClip)
         {
-            if (_playEffectMusic)
+            if (m_PlayEffectMusic)
             {
-                _audioSources[1].PlayOneShot(audioClip);
+                m_AudioSources[1].PlayOneShot(audioClip);
             }
         }
 
-        public void CloseBgMusic()
+        private void CloseBgMusic()
         {
-            _audioSources[0].Stop();
+            m_AudioSources[0].Stop();
         }
 
-        public void OpenBgMusic()
+        private void OpenBgMusic()
         {
-            _audioSources[0].Play();
+            m_AudioSources[0].Play();
         }
 
         public void CloseOrOpenBgMusic()
         {
-            _playBgMusic = !_playBgMusic;
-            if (_playBgMusic)
+            m_PlayBgMusic = !m_PlayBgMusic;
+            if (m_PlayBgMusic)
             {
                 OpenBgMusic();
             }
@@ -60,7 +60,7 @@ namespace Manager.NormalManager
         }
         public void CloseOrEffectMusic()
         {
-            _playEffectMusic = !_playEffectMusic;
+            m_PlayEffectMusic = !m_PlayEffectMusic;
             
         }
         

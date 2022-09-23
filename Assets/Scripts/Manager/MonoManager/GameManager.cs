@@ -22,6 +22,7 @@ namespace Manager.MonoManager
         public static GameManager instance { get; private set; }
 
         public Stage CurrentStage;
+
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
@@ -58,6 +59,7 @@ namespace Manager.MonoManager
         {
             return FactoryManager.AudioClipFactory.GetSingleResource(resPath);
         }
+
         /// <summary>
         /// 获取RuntimeAnimatorController
         /// </summary>
@@ -68,7 +70,7 @@ namespace Manager.MonoManager
             return FactoryManager.RunTimeAnimatorControllerFactory.GetSingleResource(resPath);
         }
 
-        public GameObject GetGameObjectResource(FactoryType factoryType,string resPath)
+        public GameObject GetGameObjectResource(FactoryType factoryType, string resPath)
         {
             return FactoryManager.FactoryDict[factoryType].GetItem(resPath);
         }

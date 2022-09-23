@@ -2,7 +2,7 @@
 
 namespace UI.UIPanel
 {
-    public class NormalModelPanel : MonoBehaviour
+    public class NormalModelPanel : BasePanel
     {
         
     }

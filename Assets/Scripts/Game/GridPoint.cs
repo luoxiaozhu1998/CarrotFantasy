@@ -1,4 +1,5 @@
 ﻿using System;
+using Manager.MonoManager;
 using UnityEngine;
 
 namespace Game
@@ -10,13 +11,13 @@ namespace Game
         public GridIndex mGridIndex;
 
         private Sprite m_GridSprite; //grid sprite
-
+#if Tool
         private Sprite m_MonsterPathSprite; //monster road sprite
 
         public GameObject[] itemPrefabs;
 
         public GameObject currentItem;
-
+#endif
         //grid state
 
         public struct GridState
@@ -26,6 +27,7 @@ namespace Game
             public bool HasItem;
             public int ItemID;
         }
+
         [Serializable]
         public struct GridIndex
         {
@@ -36,7 +38,7 @@ namespace Game
 
         private void Awake()
         {
-            m_SpriteRenderer = GetComponent<SpriteRenderer>();
+#if Tool
             m_GridSprite = Resources.Load<Sprite>("Pictures/NormalModel/Game/Grid");
             m_MonsterPathSprite = Resources.Load<Sprite>("Pictures/NormalModel/Game/1/Monster/6-1");
             itemPrefabs = new GameObject[10];
@@ -49,7 +51,9 @@ namespace Game
                     Debug.Log("Load Failed" + prefabsPath + i);
                 }
             }
+#endif
 
+            m_SpriteRenderer = GetComponent<SpriteRenderer>();
             InitGrid();
         }
 
@@ -60,10 +64,54 @@ namespace Game
             MGridState.HasItem = false;
             m_SpriteRenderer.enabled = true;
             MGridState.ItemID = -1;
+#if Tool
             m_SpriteRenderer.sprite = m_GridSprite;
             Destroy(currentItem);
+#endif
         }
 
+#if Game
+        //更新格子状态
+        public void UpdateGrid()
+        {
+            if (MGridState.CanBuild)
+            {
+                m_SpriteRenderer.enabled = true;
+                if (MGridState.HasItem)
+                {
+                    CreateItem();
+                }
+            }
+            else
+            {
+                m_SpriteRenderer.enabled = false;
+            }
+        }
+
+        private void CreateItem()
+        {
+            var itemGo = GameController.instance.GetGameObject(
+                GameController.instance.mapMaker.bigLevelID + "/Items/" +
+                MGridState.ItemID);
+            itemGo.transform.SetParent(GameController.instance.transform);
+            var createPos = transform.position - new Vector3(0, 0, 3);
+            switch (MGridState.ItemID)
+            {
+                case <= 2:
+                    createPos += new Vector3(GameController.instance.mapMaker.gridWidth,
+                        -GameController.instance.mapMaker.gridHeight) / 2;
+                    break;
+                case <= 4:
+                    createPos += new Vector3(GameController.instance.mapMaker.gridWidth,
+                        0) / 2;
+                    break;
+            }
+
+            itemGo.transform.position = createPos;
+            itemGo.GetComponent<Item>().gridPoint = this;
+        }
+#endif
+#if Tool
         private void OnMouseDown()
         {
             //怪物路点
@@ -160,5 +208,6 @@ namespace Game
                 }
             }
         }
+#endif
     }
 }
